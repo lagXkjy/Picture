@@ -1,0 +1,8 @@
+<!--pages/login/login.wxml-->
+<image class='back' src='/images/phoneback.png'></image>
+<view class='box'>
+  <image class='logo' src='/images/phonelogo.png'></image>
+  <view class='button_box'>
+      <button  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  </view>
+</view>

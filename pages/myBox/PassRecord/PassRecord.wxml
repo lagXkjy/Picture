@@ -1,0 +1,55 @@
+<!--pages/myBox/PassRecord/PassRecord.wxml-->
+<view class='Mask delvideo' wx:if='{{play==2}}'>
+  <cover-view bindtap='end' class='end'>X</cover-view>
+  <video src="{{videosrc}}" class="add-image video"></video>
+</view>
+<view wx:else>
+  <view class='titlebox'>
+    <view class='title {{currentIndex==1?"active":""}}' data-index='1' bindtap='active'>图片</view>
+    <view class='title {{currentIndex==2?"active":""}}' data-index='2' bindtap='active'>视频</view>
+  </view>
+  <!-- 图片 -->
+  <view class='listbox'>
+    <view class='listcon' wx:if='{{currentIndex==1}}'>
+      <view class='list' wx:for='{{list}}' wx:key='{{index}}'>
+        <view class='listimg'>
+          <image src='{{images+item.LirFileName}}' data-src='{{images+item.LirFileName}}' bindtap='previewImage' mode='aspectFit'></image>
+        </view>
+        <view class='time'>
+          {{item.LoadTimes}}
+        </view>
+        <view wx:if='{{item.LirUse==0}}' class='confirm'>
+          待确认
+        </view>
+        <view wx:if='{{item.LirUse==1}}' class='confirm'>
+          {{item.LirIntegral}}积分
+        </view>
+        <view wx:if='{{item.LirUse==-1}}' class='confirm'>
+          失效
+        </view>
+      </view>
+    </view>
+    <!-- 视频 -->
+    <view class='listcon' wx:if='{{currentIndex==2}}'>
+      <view class='list' wx:for='{{list}}' wx:key='{{index}}s'>
+        <view class='listimg'>
+          <!-- <video src='{{video+item.LirFileName}}' controls="{{false}}"></video> -->
+          <image src='/images/videoposter.png' data-src='{{video+item.LirFileName}}' bindtap='play' mode='aspectFit'></image>
+        </view>
+        <view class='time'>
+          {{item.LoadTimes}}
+        </view>
+        <view wx:if='{{item.LirUse==0}}' class='confirm'>
+          待确认
+        </view>
+        <view wx:if='{{item.LirUse==1}}' class='confirm'>
+          {{item.LirIntegral}}积分
+        </view>
+        <view wx:if='{{item.LirUse==-1}}' class='confirm'>
+          无效
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

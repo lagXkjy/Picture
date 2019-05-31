@@ -1,0 +1,29 @@
+<!--pages/tabBar/gallery/gallery.wxml-->
+<view class='imgBox'>
+  <view class='titlebox'>
+    <view class='titleborder'></view>
+    图片
+  </view>
+  <view class='imgcontent'>
+    <view class='imgcon' wx:for='{{imglist}}' wx:key='*this' bindtap='clicknav' data-id='1' data-IvcId='{{item.IvcId}}'>
+      <image src='{{Cover+item.IvcCover}}' mode='aspectFit'></image>
+      <text class='describe'>
+        {{item.IvcName}}
+      </text>
+    </view>
+  </view>
+</view>
+<view class='imgBox'>
+  <view class='titlebox videotitle'>
+    <view class='titleborder'></view>
+    视频
+  </view>
+  <view class='imgcontent'>
+    <view class='imgcon' wx:for='{{videolist}}' wx:key='*this' bindtap='clicknav' data-id='2' data-IvcId='{{item.IvcId}}'>
+      <image src='{{Cover+item.IvcCover}}' mode='aspectFit'></image>
+      <text class='describe'>
+        {{item.IvcName}}
+      </text>
+    </view>
+  </view>
+</view>

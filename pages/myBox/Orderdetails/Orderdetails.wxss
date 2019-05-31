@@ -1,0 +1,73 @@
+/* pages/myBox/Orderdetails/Orderdetails.wxss */
+.UserInformation{
+  margin: 0 30rpx;
+  margin-top: 20rpx;
+  background: #fff;
+  border-radius: 15rpx;
+}
+.Usertitle{
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #f3f3f3;
+  font-size: 26rpx;
+}
+.Usertitle>image{
+  width: 27rpx;
+  height: 27rpx;
+  margin-right: 10rpx;
+}
+.Username{
+  padding: 30rpx 0;
+  padding-left: 68rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+.name{
+  margin-bottom: 10rpx;
+}
+.name>text:nth-child(1){
+  margin-right: 45rpx;
+}
+.address{
+  color: #b5b5b5;
+}
+.titcol{
+  width: 135rpx;
+  display: inline-block;
+  margin: 0 !important;
+  color: #b5b5b5;
+}
+.imgbox{
+  height: 240rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #f3f3f3;
+}
+.imgcon{
+  width: 200rpx;
+  height: 200rpx;
+  box-sizing: border-box;
+}
+.imgcon>image{
+  width: 100%;
+  height: 100%;
+}
+.detcon{
+  margin-left: 40rpx;
+  height: 200rpx;
+}
+.detcon>view:nth-child(1){
+  font-size: 30rpx;
+
+}
+.detcon>view:nth-child(2){
+  font-size: 30rpx;
+  color: #e60012;
+  font-weight: bold;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,101 @@
+<!--pages/galleryBox/List/List.wxml-->
+<!-- 图片 -->
+<view class='search' wx:if='{{hide}}'>
+  <view class='searchcon'>
+    <image src='/images/search.png'></image>
+    <input bindconfirm='secrch' bindinput='inputTyping' placeholder='输入机型名称搜索'></input>
+  </view>
+</view>
+<block wx:if='{{type==1}}'>
+  <view class='imgbox' wx:if='{{hide}}'>
+    <view class='imgcon {{(index+1)%4!=0?"marrig":""}}' wx:for='{{list}}' wx:key='{{index}}' data-src='{{images+item.IviFileName}}' data-id='{{index}}' bindtap='SeeImg'>
+      <view class='imagebox'>
+        <image src='{{images+item.IviFileName}}' mode='aspectFit'></image>
+      </view>
+      <view class='imagemodel'>{{item.IviModel}}</view>
+    </view>
+  </view>
+  <view class="swiperContainer" wx:if='{{!hide}}' style='height:{{winHit}}'>
+    <view class='auto'>
+      <swiper bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current='{{idx}}' style='height:100%'>
+        <block wx:for="{{list}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{images+item.IviFileName}}" mode='aspectFit' class="slide-image" bindload='imgH' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <cover-view class='delvid' bindtap='show'>X</cover-view>
+    <cover-view class='pos'>
+      <cover-view class='poss'>
+        <cover-view class='download' bindtap='download'>
+          <cover-image class='cover_image_see' src='/images/See.png'></cover-image>
+          <cover-view>{{browsenum}}</cover-view>
+        </cover-view>
+        <block wx:if='{{UserLoad==0}}'>
+          <cover-view class='download' bindtap='download' wx:if='{{Setting}}'>
+            <cover-image class='cover_image' src='/images/download.png'></cover-image>
+            <cover-view>下载</cover-view>
+          </cover-view>
+          <cover-view class='download' open-type="openSetting" bindopensetting='handleSetting' wx:else>
+            <cover-image class='cover_image' src='/images/download.png'></cover-image>
+            <cover-view>下载</cover-view>
+          </cover-view>
+        </block>
+
+
+      </cover-view>
+      <cover-view class="imageCount xinghao">{{model}}</cover-view>
+      <cover-view class="imageCount">{{idx+1}}/{{totalCount}}</cover-view>
+    </cover-view>
+
+  </view>
+</block>
+
+<!-- 视频 -->
+<block wx:if='{{type==2}}'>
+  <view class='imgbox' wx:if='{{hide}}'>
+    <view class='imgcon {{(index+1)%4!=0?"marrig":""}}' wx:for='{{list}}' wx:key='{{index}}' data-src='{{video+item.IviFileName}}' data-id='{{index}}' bindtap='SeeImg'>
+      <!-- <image src='{{item.IviFileName}}' mode='aspectFit'></image> -->
+      <view class='imagebox'>
+        <video class='video' src="{{video+item.IviFileName}}"></video>
+      </view>
+      <view class='imagemodel'>{{item.IviModel}}</view>
+    </view>
+  </view>
+  <view class="swiperContainer" wx:if='{{!hide}}' style='height:{{winHit}}'>
+    <view class='auto'>
+      <swiper bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current='{{idx}}' style='height:100%'>
+        <block wx:for="{{list}}" wx:key="{{index}}">
+          <swiper-item>
+            <video class='videos' src="{{video+item.IviFileName}}"></video>
+            <!-- <image src="{{item}}" mode="widthFix" class="slide-image" bindtap='show' bindload='imgH' /> -->
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <cover-view class='delvid' bindtap='show'>X</cover-view>
+    <cover-view class='pos'>
+      <cover-view class='poss'>
+        <cover-view class='download' bindtap='download'>
+          <cover-image class='cover_image_see' src='/images/See.png'></cover-image>
+          <cover-view>{{browsenum}}</cover-view>
+        </cover-view>
+        <block wx:if='{{UserLoad==0}}'>
+          <cover-view class='download' bindtap='download' wx:if='{{Setting}}'>
+            <cover-image class='cover_image' src='/images/download.png'></cover-image>
+            <cover-view>下载</cover-view>
+          </cover-view>
+          <cover-view class='download' open-type="openSetting" bindopensetting='handleSetting' wx:else>
+            <cover-image class='cover_image' src='/images/download.png'></cover-image>
+            <cover-view>下载</cover-view>
+          </cover-view>
+        </block>
+
+
+      </cover-view>
+      <cover-view class="imageCount xinghao">{{model}}</cover-view>
+      <cover-view class="imageCount">{{idx+1}}/{{totalCount}}</cover-view>
+    </cover-view>
+  </view>
+</block>

@@ -1,0 +1,21 @@
+<!--pages/myBox/my/my.wxml-->
+<view>
+  <view class='header'>
+    <view class='header_con'>
+      <image src='{{listData.UAvImg}}'></image>
+      <view class='name'>
+        <view>{{listData.UnickName}}</view>
+        <view>积分：{{listData.UserUseIntegral}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='listcon'>
+    <view class='list' wx:for='{{list}}' data-url='{{item.url}}' wx:key='{{index}}' bindtap='listTap'>
+      <view>{{item.name}}</view>
+      <view>
+        <image src='/images/jiantou.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+

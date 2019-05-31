@@ -1,0 +1,71 @@
+<!--pages/seevisit/seevisit.wxml-->
+<view class='Mask delvideo' wx:if='{{play==2}}'>
+  <cover-view bindtap='end' class='end'>X</cover-view>
+  <video src="{{video+videosrc}}" class="add-image video"></video>
+</view>
+<form bindsubmit='submit' hidden='{{play==2}}'>
+  <view class='listbox'>
+  <view class='listcon'>
+      <view class='listTitle'>行业</view>
+      <view class="section">
+        <picker disabled='{{Use}}' bindchange="visit" value="{{visit}}" range="{{visits}}">
+          <view class='picker_box'>
+            <text class="picker">{{visits[visit]||'请选择行业'}}</text>
+            <image wx:if='{{!Use}}' src='/images/jiantou.png'></image>
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>客户</view>
+      <view class='input_box'>
+        <input class='input' type="text" name='Name' focus="{{focus.Name}}" value='{{Name}}' disabled='{{Use}}' placeholder='请输入客户名称' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>品牌</view>
+      <view class='input_box'>
+        <input class='input' type="text"  name='address' focus="{{focus.address}}" value='{{address}}' placeholder='请输入品牌名称' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>机型</view>
+      <view class='input_box'>
+        <input class='input' type="text"  name='Model' focus="{{focus.Model}}" value='{{Model}}' placeholder='请输入机型' placeholder-style="color:#000"></input>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>上传照片</view>
+      <view class="input_box">
+        <view class="justify-end">
+          <block wx:for='{{imageList}}' wx:key='*this'>
+            <view bindtap='deleteImage' data-index='{{index}}' class="add-image image-box margin-r-20">
+              <!-- <image mode="widthFix" src="/images/delete.png" class="delete-image" /> -->
+              <image mode="aspectFit" data-src='{{images+item}}' src="{{images+item}}" class="add-image" />
+            </view>
+          </block>
+          <image hidden='{{imageList.length >= imageMaxNum}}' wx:if='{{!Use}}' bindtap='addImage' mode="aspectFit" src="/images/addImage.png" class="add-image" />
+        </view>
+      </view>
+    </view>
+    <view class='listcon'>
+      <view class='listTitle'>上传视频</view>
+      <view class="input_box">
+        <view class="justify-end">
+          <block wx:for='{{VideoList}}' wx:key='*this'>
+            <view data-index='{{index}}' class="add-image image-box margin-r-20">
+              <view class='active'>
+                <image bindtap='play' class='activeimg' data-src='{{item}}' src='/images/play.jpg'></image>
+              </view>
+              <!-- <image mode="widthFix" src="/images/delete.png" class="delete-image" /> -->
+            </view>
+          </block>
+          <image hidden='{{VideoList.length >= imageMaxNum}}' wx:if='{{!Use}}' bindtap='addvalue' mode="aspectFit" src="/images/addImage.png" class="add-image" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bottombox'></view>
+  <button form-type='submit' class='Submission'>提交</button>
+  <view class='underline' bindtap='Explain'>点击查看上传图片说明</view>
+</form>

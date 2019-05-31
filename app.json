@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/Jump/Jump",
+    "pages/uploadBox/Explain/Explain",
+    "pages/galleryBox/gallery/gallery",
+    "pages/myBox/my/my",
+    "pages/login/login",
+    "pages/uploadBox/upload/upload",
+    "pages/exchangeBox/placeOrder/placeOrder",
+    "pages/myBox/PassRecord/PassRecord",
+    "pages/exchangeBox/exchange/exchange",
+    "pages/myBox/exchange/exchange",
+    "pages/myBox/Orderdetails/Orderdetails",
+    "pages/exchangeBox/details/details",
+    "pages/galleryBox/List/List",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f2f2f2",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#434444",
+    "selectedColor": "#434444",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/galleryBox/gallery/gallery",
+        "text": "图库",
+        "iconPath": "/images/gallery.png",
+        "selectedIconPath": "/images/gallery2.png"
+      },
+      {
+        "pagePath": "pages/uploadBox/upload/upload",
+        "text": "上传",
+        "iconPath": "/images/upload.png",
+        "selectedIconPath": "/images/upload2.png"
+      },
+      {
+        "pagePath": "pages/exchangeBox/exchange/exchange",
+        "text": "兑换礼品",
+        "iconPath": "/images/exchange.png",
+        "selectedIconPath": "/images/exchange2.png"
+      },
+      {
+        "pagePath": "pages/myBox/my/my",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

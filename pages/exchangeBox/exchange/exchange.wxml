@@ -1,0 +1,12 @@
+<!--pages/exchangeBox/exchange/exchange.wxml-->
+<view class='listBox'>
+  <view class='listcon {{index%2==0?"borrit":""}}' wx:for='{{list}}' data-IgId='{{item.IgId}}' wx:key='*this' bindtap='details'>
+    <view class='imgbox'>
+      <image mode='aspectFit' src='{{images+item.IgMasterGraph}}'></image>
+    </view>
+    <view class='describe'>
+      <view>{{item.IgName}}</view>
+      <view>{{item.IgIntegral}}积分</view>
+    </view>
+  </view>
+</view>

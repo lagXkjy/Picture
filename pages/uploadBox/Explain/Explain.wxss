@@ -1,0 +1,15 @@
+/* pages/uploadBox/Explain/Explain.wxss */
+page{
+  background: #fff;
+}
+.box{
+  padding: 50rpx 30rpx;
+  border-top: 1rpx solid #e3e3e3;
+  font-size: 30rpx;
+}
+.box>view{
+  margin-top: 50rpx;
+}
+.box>view>image{
+  margin-top: 20rpx;
+}

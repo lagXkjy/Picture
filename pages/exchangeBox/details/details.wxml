@@ -1,0 +1,35 @@
+<!--pages/exchangeBox/details/details.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class='box'>
+  <view class='swiperbox' style='height:{{hig}}'>
+    <!-- <swiper indicator-dots="true" indicator-active-color="#fff" style='height:{{hig}}'>
+      <block wx:for="{{imgUrls}}" wx:key='*this'>
+        <swiper-item> -->
+          <image src="{{images+list.IgMasterGraph}}" mode='widthFix' class="slide-image" bindload='imgH' />
+        <!-- </swiper-item>
+      </block>
+    </swiper> -->
+  </view>
+  <view class='jianjie'>
+    <view>{{list.IgName}}</view>
+    <view>{{list.IgIntegral}}积分</view>
+  </view>
+  <view class='details'>
+    <view class='title'>
+      商品详情
+    </view>
+  </view>
+  <!-- <view>
+    <view>
+      <image wx:for='{{imgUrls}}'  wx:key='*this' src='{{item}}' mode='widthFix' style="width:100%"></image>
+    </view>
+  </view>
+  <view class='power'>
+    <view wx:for='{{detaills}}'  wx:key='*this'>
+      <text>{{item.name}}：</text>
+      <text>{{item.type}}</text>
+    </view>
+  </view> -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<view class='submit' bindtap='submit'>立即兑换</view>

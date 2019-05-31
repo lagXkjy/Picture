@@ -1,0 +1,20 @@
+<!--pages/uploadBox/Explain/Explain.wxml-->
+<view class='box'>
+  如果有可能,每次上传四张照片，分别包含三台机器特写，机器铭牌信息，运行信息和空压机站房场景。示例如下：
+  <view>
+    1，单张机器特写
+    <image src='/images/img1.png' mode='widthFix'></image>
+  </view>
+  <view>
+    2，机器铭牌特写
+    <image src='/images/img2.png' mode='widthFix'></image>
+  </view>
+  <view>
+    3，空压机站房场景
+    <image src='/images/img3.png' mode='widthFix'></image>
+  </view>
+  <view>
+    4，控制面板机器运行参数
+    <image src='/images/img4.png' mode='widthFix'></image>
+  </view>
+</view>

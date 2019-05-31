@@ -1,0 +1,27 @@
+<!--pages/myBox/exchange/exchange.wxml-->
+<view class='search'>
+  <view class='searchcon'>
+    <image src='/images/search.png'></image>
+    <input bindconfirm='secrch' bindinput='inputTyping' placeholder='输入订单编号查询'></input>
+  </view>
+</view>
+<view class='block'>
+<view class='listbox' wx:for='{{list}}' wx:key='*this' data-Oid='{{item.IgoId}}' bindtap='order'>
+  <view class='listcon'>
+      <view class='ordernum'>
+        <view>订单号：{{item.IgoSN}}</view>
+        <view style='color:#e60012'>{{item.IgoOrderState==0?'待发货':'已发货'}}</view>
+      </view>
+      <view class='imgbox'>
+    <view class='imgcon'>
+      <image src='{{images+item.IgoMasterGraph}}' mode='aspectFit'></image>
+    </view>
+    <view class='detcon'>
+      <view>{{item.IgoGiftName}}</view>
+      <view>{{item.IgoIntegral}}积分</view>
+    </view>
+  </view>
+  </view>
+</view>
+</view>
+
